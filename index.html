@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LingoGenie - Language Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="checkLogin()">
+  <div class="container">
+    <header>
+      <h1>🌐 LingoGenie</h1>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <textarea id="userInput" placeholder="Type or speak your text..." oninput="suggestWords()"></textarea>
+
+    <div class="suggestions" id="suggestionsBox"></div>
+
+    <div class="controls">
+      <select id="taskSelect">
+        <option value="translate">Translate</option>
+        <option value="synonyms">Synonyms</option>
+        <option value="grammar">Grammar</option>
+        <option value="explain">Explain</option>
+      </select>
+      <button onclick="handleRequest()">Run</button>
+      <button onclick="startVoiceInput()">🎤 Voice</button>
+      <button onclick="downloadHistory()">⬇ Export</button>
+    </div>
+
+    <div id="response" class="response-box"></div>
+
+    <h3>🕒 History</h3>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
